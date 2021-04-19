@@ -176,4 +176,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .4s var(--ease);
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
 }

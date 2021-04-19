@@ -21,9 +21,11 @@
       </label>
       <button class="search-btn" @click="searchBooks">Найти</button>
     </div>
-    <div v-if="loader" class="loader-overlay">
-      <img :src="loaderGif" alt="gif">
-    </div>
+    <transition name="fade">
+      <div v-if="loader" class="loader-overlay">
+        <img :src="loaderGif" alt="gif" />
+      </div>
+    </transition>
     <div v-if="books" class="result">
       <a
         v-for="(book, idx) in serializedBooks"
@@ -66,7 +68,7 @@ export default {
 
       bookThumb,
       closeIcon,
-      loaderGif
+      loaderGif,
     };
   },
 
@@ -75,6 +77,7 @@ export default {
   methods: {
     async searchBooks() {
       if (this.searchValue.length == 0) return;
+      this.books = [];
       this.loader = true;
       this.books = await api.getBooks(this.searchValue);
       this.books = this.books.items;
@@ -99,7 +102,7 @@ export default {
         const sliced = date.slice(0, 4);
         return sliced;
       }
-    }
+    },
   },
 
   computed: {
