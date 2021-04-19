@@ -4,7 +4,7 @@ class Api {
     }
 
     async getBooks(value) {
-        const data = await fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${value}&key=${this.API_KEY}`);
+        const data = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${value}&key=${this.API_KEY}`);
         return data.json();
     }
 }

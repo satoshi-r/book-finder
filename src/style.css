@@ -27,6 +27,7 @@ body {
     text-align: center;
     color: var(--dark);
     margin-top: 60px;
+    height: calc(100vh - 60px);
 }
 
 .search {
@@ -126,6 +127,7 @@ body {
     width: 150px;
     height: 100%;
     flex-shrink: 0;
+    padding-top: 4px;
 }
 
 .book-thumb img {
@@ -144,8 +146,8 @@ body {
 
 .book-author {
     margin-top: 4px;
-    font-size: 18px;
-    font-weight: medium;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .book-description {
@@ -156,4 +158,22 @@ body {
     text-align: left;
     width: 100%;
     margin-left: 16px;
+}
+
+.book-publisher {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.book-date {
+    font-size: 14px;
+}
+
+.loader-overlay {
+    height: calc(100% - 128px);
+    width: 100%;
+    background: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
